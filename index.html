@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinno - Design Case Study</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', 'Noto Sans SC', sans-serif;
+            background-color: #f5f3f0; /* 浅米灰色背景 */
+            overflow-x: hidden;
+        }
+        
+        /* Ken Burns Animation for Background */
+        @keyframes kenBurns {
+            from {
+                transform: scale(1.0);
+            }
+            to {
+                transform: scale(1.1);
+            }
+        }
+        
+        .ken-burns {
+            animation: kenBurns 10s ease-out forwards;
+        }
+        
+        /* Text Reveal Animation (Cinematic Spacing) */
+        @keyframes text-reveal {
+            0% {
+                letter-spacing: 20px;
+                opacity: 0;
+                filter: blur(10px);
+            }
+            100% {
+                letter-spacing: 2px;
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+        
+        .text-reveal {
+            animation: text-reveal 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        
+        /* Container - Max width 1280px, centered */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        /* Content Images - Remove default spacing */
+        .content-image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Section 1: Hero Animation -->
+    <section class="relative h-screen w-full overflow-hidden">
+        <!-- Background Layer with Ken Burns Effect -->
+        <div class="absolute inset-0 w-full h-full overflow-hidden">
+            <img 
+                src="image2/1.png" 
+                alt="Hero Background" 
+                class="w-full h-full object-cover ken-burns"
+            >
+            <!-- Dark Overlay for Text Readability -->
+            <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        </div>
+        
+        <!-- Text Layer with Cinematic Spacing Animation -->
+        <div class="absolute inset-0 flex items-center justify-center z-10">
+            <div class="container">
+                <h1 class="text-white font-normal text-6xl md:text-8xl lg:text-9xl text-reveal text-center" style="font-family: 'Montserrat', sans-serif;">
+                    K i n n o
+                </h1>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 2: Content Stack -->
+    <section class="w-full">
+        <div class="container">
+            <img src="image1/2.png" alt="Content 2" class="content-image">
+            <img src="image1/3.png" alt="Content 3" class="content-image">
+            <img src="image1/4.png" alt="Content 4" class="content-image">
+            <img src="image1/5.png" alt="Content 5" class="content-image">
+            <img src="image1/6.png" alt="Content 6" class="content-image">
+            <img src="image1/7.png" alt="Content 7" class="content-image">
+            <img src="image1/8.png" alt="Content 8" class="content-image">
+            <img src="image1/9.png" alt="Content 9" class="content-image">
+            <img src="image1/10.png" alt="Content 10" class="content-image">
+            <img src="image1/11.png" alt="Content 11" class="content-image">
+        </div>
+    </section>
+</body>
+</html>
+
