@@ -44,12 +44,12 @@
         /* Text Reveal Animation (Cinematic Spacing) */
         @keyframes text-reveal {
             0% {
-                letter-spacing: 20px;
+                letter-spacing: 1em;
                 opacity: 0;
                 filter: blur(10px);
             }
             100% {
-                letter-spacing: 2px;
+                letter-spacing: 0.1em;
                 opacity: 1;
                 filter: blur(0);
             }
@@ -57,6 +57,27 @@
         
         .text-reveal {
             animation: text-reveal 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            white-space: nowrap;
+            font-size: clamp(2rem, 8vw, 8rem);
+        }
+        
+        /* Responsive text sizing for hero title */
+        @media (max-width: 640px) {
+            .text-reveal {
+                font-size: clamp(1.5rem, 6vw, 3rem);
+            }
+        }
+        
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .text-reveal {
+                font-size: clamp(3rem, 7vw, 6rem);
+            }
+        }
+        
+        @media (min-width: 1025px) {
+            .text-reveal {
+                font-size: clamp(4rem, 8vw, 9rem);
+            }
         }
         
         /* Container - Max width 1280px, centered */
@@ -91,7 +112,7 @@
         
         <!-- Text Layer with Cinematic Spacing Animation -->
         <div class="absolute inset-0 flex items-center justify-center z-10">
-            <h1 class="text-white font-normal text-6xl md:text-8xl lg:text-9xl text-reveal text-center" style="font-family: 'Montserrat', sans-serif;">
+            <h1 class="text-white font-normal text-reveal text-center" style="font-family: 'Montserrat', sans-serif;">
                 M A G I C F R A M E
             </h1>
         </div>
